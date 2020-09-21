@@ -10,6 +10,9 @@ engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 engine.setProperty('voice',voices[0].id)
 
+def speak(audio):
+    engine.say(audio)
+    engine.runAndWait()
 
 def wishMe():
     hour = int(datetime.datetime.now().hour)
@@ -41,25 +44,9 @@ def takeCommand():
     return query   
     
 
-def speak(audio):
-    engine.say(audio)
-    engine.runAndWait()
-
-def sendEmail(to, content):
-    server = smtplib.SMTP('smtp.gmail.com',587)
-    server.starttls()
-    server.login('mananjagani145@gmail.com','gqxiivhozwrlibnp')
-    server.sendmail('mananjagani145@gmail.com',to, content)
-    server.quit()
     
 if __name__ == "__main__":
     
-    d = {
-        'charvi' : 'jaganicharvi@gmail.com',
-        'manan' : '201901295@daiict.ac.in',
-        'ayush' : '2512ayush@gmail.com',
-        'dad' : 'jaganiashwin@gmail.com'
-    }
     
     wishMe()
     while True:
@@ -90,19 +77,7 @@ if __name__ == "__main__":
         elif 'open code' in query:
             codePath = "C:\\Users\\manan\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
             os.startfile(codePath)
-            
-        elif 'send email' in query:
-            try:
-                speak("To whom do you want to send an email")
-                name = takeCommand().lower()
-                to = d[name]
-                speak("What should i say?")
-                content = takeCommand()
-                sendEmail(to, content)
-                speak(f"Email has been sent to {name}!")
-            except Exception as e:
-                print(e)
-                speak('Sorry sir i am unable to send this email')
+        
                 
                 
             

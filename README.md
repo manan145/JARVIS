@@ -6,10 +6,10 @@ in the function then it will be able to perform it otherwise it will throw an er
 
 QUESTION: What all tasks it can perform?
 ANS: The following tasks it can perform:
-Wish you (e.g good evening/afternoon/morning according to the time)
-open websites such as youtube,google,stackoverflow
-gives you the correct time according to your time zone
-open your code editor for example vscode
+Wish you (e.g good evening/afternoon/morning according to the time),
+open websites such as youtube,google,stackoverflow,
+gives you the correct time according to your time zone,
+open your code editor for example vscode,
 
 make sure that your python interpreter is 32 bit system
 
